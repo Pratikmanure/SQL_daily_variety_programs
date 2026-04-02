@@ -12,9 +12,8 @@ INSERT INTO EmployeeSalary VALUES
 
 --answer 
 
-SELECT 
-    e.name AS employee_name,
-    m.name AS manager_name
-FROM Employee e
-LEFT JOIN Employee m
-ON e.managerId = m.id;
+SELECT e.name
+FROM EmployeeSalary e
+JOIN EmployeeSalary m
+ON e.managerId = m.id
+WHERE e.salary = m.salary;
