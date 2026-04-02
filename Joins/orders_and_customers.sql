@@ -16,3 +16,10 @@ INSERT INTO Orders VALUES
 (101, 1),
 (102, 2),
 (103, 1);
+
+--answer
+
+SELECT o.id AS order_id, c.name AS customer_name
+FROM Customers c
+JOIN Orders o   --inner join
+ON c.id = o.customerId;
