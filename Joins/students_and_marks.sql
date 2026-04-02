@@ -17,3 +17,8 @@ INSERT INTO Marks VALUES
 (1, 85),
 (2, 90);
 
+-- answer
+SELECT name, marks
+FROM students s
+LEFT JOIN marks m
+ON s.id = m.studentid;
