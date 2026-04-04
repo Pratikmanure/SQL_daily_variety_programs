@@ -11,9 +11,20 @@ INSERT INTO Transactions VALUES
 
 -- answer
 
+-- find total approved transactions vs total transactions
   SELECT count(*) AS total_transactions,
 SUM(CASE
         when status = 'approved' then 1
         else 0
     END ) AS approved_transactions   
 from Transactions   
+
+-- find total approved amount vs total amount
+
+SELECT 
+SUM(amount) AS total_amount,
+SUM(CASE 
+        WHEN status = 'approved' THEN amount 
+        ELSE 0 
+    END) AS approved_amount
+FROM Transactions;
